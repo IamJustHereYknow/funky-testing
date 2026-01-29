@@ -1,0 +1,87 @@
+- type: entity
+  name: Metal Handle
+  parent: BaseItem
+  id: MetalHandle
+  description: A piece of a Metal that has been shaped into a Handle.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/Handle.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Construction
+    graph: MetalHandleGraph
+    node: metalhandle
+  - type: Tag
+    tags:
+    - MetalHandle
+
+- type: entity
+  name: Metal Shaft
+  parent: BaseItem
+  id: MetalShaft
+  description: A incomplete metal piece.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - MetalShaft
+
+- type: entity
+  name: Metal Blade
+  parent: BaseItem
+  id: MetalBlade
+  description: A Crude Sharp piece of metal that has been bent, It doesn't look too sharp.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/Blade.rsi
+    state: icon
+  - type: Item
+    size: Normal
+
+- type: entity
+  name: Metal Club
+  parent: [BaseItem, BaseMinorContraband]
+  id: MetalClub
+  description: A Crude Makeshift Metal Club. This would probably give you some fractures.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/metalclub.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 10
+        Structural: 5
+    soundHit:
+      collection: ScrapImpact
+  - type: Item
+    size: Normal
+
+- type: entity
+  name: Metal Pole
+  parent: [BaseItem, BaseMinorContraband]
+  id: MetalPole
+  description: Who do you think you are? A Tider Monk?.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/pole.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 10
+        Structural: 5
+    soundHit:
+      collection: ScrapImpact
+  - type: MeleeThrowOnHit
+    speed: 12 # Funky change - 30 -> 20 since 30 is incredibly fast, fast enough to frequently clip people through walls
+    distance: 8
+  - type: Item
+    size: Huge

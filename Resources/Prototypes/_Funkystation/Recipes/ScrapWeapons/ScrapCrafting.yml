@@ -1,0 +1,62 @@
+- type: constructionGraph
+  id: MetalHandleGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: metalhandle
+        steps:
+        - material: Steel
+          amount: 3
+          doAfter: 4
+    - node: metalhandle
+      entity: MetalHandle
+
+- type: constructionGraph
+  id: MetalShaftGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: metalshaft
+        steps:
+        - material: Steel
+          amount: 3
+          doAfter: 4
+    - node: metalshaft
+      entity: MetalShaft
+
+- type: constructionGraph
+  id: MetalBladeGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: metalsharp
+        steps:
+        - material: Steel
+          amount: 3
+          doAfter: 4
+    - node: metalsharp
+      entity: MetalBlade
+
+- type: constructionGraph
+  id: MetalClubGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: metalclub
+        steps:
+      - tag: MetalHandle
+        icon:
+          sprite: _Funkystation/Objects/ScrapWeapons/Handle.rsi
+          state: icon
+        name: Metal Handle
+      - tag: MetalShaft
+        icon:
+          sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
+          state: icon
+        name: Metal Shaft
+    - node: metalclub
+      entity: MetalClub

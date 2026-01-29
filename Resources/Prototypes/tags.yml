@@ -1145,6 +1145,12 @@
 - type: Tag
   id: Metal
 
+- type: Tag
+  id: MetalHandle
+
+- type: Tag
+  id: MetalShaft
+
 - type: Tag # Assmos - Metal Hydrogen
   id: MetalHydrogenArmor
 
