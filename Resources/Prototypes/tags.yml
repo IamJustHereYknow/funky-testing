@@ -1145,10 +1145,10 @@
 - type: Tag
   id: Metal
 
-- type: Tag
+- type: Tag # Scrap Weapon Parts
   id: MetalHandle
 
-- type: Tag
+- type: Tag # Scrap Weapon Parts
   id: MetalShaft
 
 - type: Tag # Assmos - Metal Hydrogen

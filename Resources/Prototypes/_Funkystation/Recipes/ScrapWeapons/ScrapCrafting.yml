@@ -48,15 +48,16 @@
       edges:
       - to: metalclub
         steps:
-      - tag: MetalHandle
-        icon:
-          sprite: _Funkystation/Objects/ScrapWeapons/Handle.rsi
-          state: icon
-        name: Metal Handle
-      - tag: MetalShaft
-        icon:
-          sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
-          state: icon
-        name: Metal Shaft
+        - tag: MetalHandle
+          name: Metal Handle
+          icon:
+            sprite: _Funkystation/Objects/ScrapWeapons/Handle.rsi
+            state: icon
+        - tag: MetalShaft
+          name: Metal Shaft
+          icon:
+            sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
+            state: icon
+          doAfter: 4
     - node: metalclub
       entity: MetalClub

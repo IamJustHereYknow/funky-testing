@@ -40,7 +40,7 @@
 
 - type: construction
   name: Metal Club
-  id: metalbat
+  id: ScrapMetalClub
   graph: MetalClubGraph
   startNode: start
   targetNode: metalclub
