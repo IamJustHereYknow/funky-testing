@@ -17,10 +17,25 @@
     node: metalhandle
 
 - type: entity
+  name: metal handle
+  parent: BaseItem
+  id: MetalHandle
+  description: A piece of a Metal that has been shaped into a Handle.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/Handle.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - MetalHandle
+  - type: Item
+    size: Normal
+
+- type: entity
   name: metal shaft
   parent: BaseItem
   id: MetalShaft
-  description: A incomplete metal piece.
+  description: A long piece of metal.
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
@@ -81,16 +96,58 @@
   - type: Sprite
     sprite: _Funkystation/Objects/ScrapWeapons/pole.rsi
     state: icon
+  - type: MultiHandedItem
+  - type: ItemToggle
+    onActivate: false
+    verbToggleOn: metal-pole-component-verb-engage
+    verbToggleOff: metal-pole-component-verb-stop
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Funkystation/MetalSounds/MetalSpin.ogg
+  - type: ComponentToggler
+    components:
+    - type: MeleeThrowOnHit
+      speed: 8 # Funky change - 30 -> 20 since 30 is incredibly fast, fast enough to frequently clip people through walls
+      distance: 4
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/_Funkystation/MetalSounds/BonkHit.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/_Funkystation/MetalSounds/BonkHit.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    deactivatedSoundOnHitNoDamage:
+      collection: ScrapImpact
+    activatedDamage:
+      types:
+        Blunt: 15
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    animation: WeaponArcThrust
+    attackRate: 0.40
     damage:
       types:
         Blunt: 10
-        Structural: 5
-    soundHit:
-      collection: ScrapImpact
-  - type: MeleeThrowOnHit
-    speed: 8 # Funky change - 30 -> 20 since 30 is incredibly fast, fast enough to frequently clip people through walls
-    distance: 4
   - type: Item
     size: Huge
+  - type: Construction
+    graph: MetalPoleGraph
+    node: metalpole
+
+- type: entity
+  name: unfinished metal pole
+  parent: [BaseItem, BaseMinorContraband]
+  id: UnfinishedMetalPole
+  description: A unfinished long metal pole.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/ScrapWeapons/pole.rsi
+    state: icon
+  - type: Item
+    size: Huge
+  - type: Construction
+    graph: MetalPoleGraph
+    node: metalpoleA

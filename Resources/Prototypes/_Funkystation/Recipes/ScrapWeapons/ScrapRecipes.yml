@@ -50,3 +50,16 @@
     sprite: _Funkystation/Objects/ScrapWeapons/metalclub.rsi
     state: icon
   objectType: Item
+
+- type: construction
+  name: Metal Pole
+  id: ScrapMetalPole
+  graph: MetalPoleGraph
+  startNode: start
+  targetNode: metalpole
+  category: construction-category-weapons
+  description: One must wonder how someone can mess with metal with their hands.
+  icon:
+    sprite: _Funkystation/Objects/ScrapWeapons/pole.rsi
+    state: icon
+  objectType: Item

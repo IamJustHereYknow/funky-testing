@@ -61,3 +61,35 @@
           doAfter: 4
     - node: metalclub
       entity: MetalClub
+
+- type: constructionGraph
+  id: MetalPoleGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+      - to: metalpoleA
+        steps:
+        - tag: MetalShaft
+          name: Metal Shaft
+          icon:
+            sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
+            state: icon
+
+        - tag: MetalShaft
+          name: Metal Shaft
+          icon:
+            sprite: _Funkystation/Objects/ScrapWeapons/Shaft.rsi
+            state: icon
+          doAfter: 4
+
+    - node: metalpoleA
+      entity: UnfinishedMetalPole
+      edges:
+      - to: metalpole
+        steps:
+        - tool: Welding
+          doAfter: 8
+
+    - node: metalpole
+      entity: MetalPole
